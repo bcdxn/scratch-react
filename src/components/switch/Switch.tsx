@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {SunIcon} from '@primer/octicons-react'
 import {MoonIcon} from '@primer/octicons-react'
 
@@ -10,13 +9,9 @@ interface SwitchProps {
 }
 
 const Switch: React.FC<SwitchProps> = (props: SwitchProps) => {
-  const [value, setValue] = useState(props.value);
-
   const toggle = () => {
-    setValue(!value);
-    console.log(!value);
     if (props.onChange) {
-      props.onChange(!value);
+      props.onChange(!props.value);
     }
   }
 
@@ -24,13 +19,13 @@ const Switch: React.FC<SwitchProps> = (props: SwitchProps) => {
     <>
       <button type="button" className="switch" onClick={toggle}>
         <div className="track"></div>
-        <div className={value ? "knob on" : "knob off"}>
-          {getKnobIcon(value)}
+        <div className={props.value ? "knob on" : "knob off"}>
+          {getKnobIcon(props.value)}
         </div>
       </button>
     </>
   )
-}
+};
 
 function getKnobIcon(value: boolean) {
   if (value) {

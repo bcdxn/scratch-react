@@ -1,0 +1,21 @@
+.cli-reference[data-theme="dark"] {
+  --primary-color: #4C566A;
+  --font-color: #ECEFF4;
+  --bg-color: #2E3440;
+}
+
+.cli-reference[data-theme="light"] {
+  --primary-color: #D8DEE9;
+  --font-color: #2E3440;
+  --bg-color: #fff;
+}
+
+.cli-reference {
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  min-width: 100%;
+
+  .spacing {
+    padding: 40px;
+  }
+}
