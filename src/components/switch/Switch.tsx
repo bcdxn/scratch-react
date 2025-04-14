@@ -1,11 +1,11 @@
-import {SunIcon} from '@primer/octicons-react'
-import {MoonIcon} from '@primer/octicons-react'
+import { SunIcon } from "@primer/octicons-react";
+import { MoonIcon } from "@primer/octicons-react";
 
 import "./Switch.css";
 
 interface SwitchProps {
-  value: boolean
-  onChange?: (value: boolean)=>void
+  value: boolean;
+  onChange?: (value: boolean) => void;
 }
 
 const Switch: React.FC<SwitchProps> = (props: SwitchProps) => {
@@ -13,7 +13,7 @@ const Switch: React.FC<SwitchProps> = (props: SwitchProps) => {
     if (props.onChange) {
       props.onChange(!props.value);
     }
-  }
+  };
 
   return (
     <>
@@ -24,7 +24,7 @@ const Switch: React.FC<SwitchProps> = (props: SwitchProps) => {
         </div>
       </button>
     </>
-  )
+  );
 };
 
 function getKnobIcon(value: boolean) {
@@ -35,4 +35,4 @@ function getKnobIcon(value: boolean) {
   }
 }
 
-export default Switch
+export default Switch;
