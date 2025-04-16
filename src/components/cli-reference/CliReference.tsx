@@ -1,19 +1,17 @@
 import React, { useState } from "react";
-import Switch from "../switch/Switch";
 import "./CliReference.css";
+import SideNav from "../side-nav/SideNav";
+import { Theme } from "../../Theme";
+import { OpenCliDocument } from "../../OpenCli";
+
+const doc: OpenCliDocument = {
+  Info: {
+    Title: "OpenCLI CLI",
+  },
+};
 
 const CliReference: React.FC<{}> = () => {
   const [theme, setTheme] = useState(osThemePreference());
-
-  console.log(theme);
-
-  function switchTheme(value: boolean) {
-    if (value) {
-      setTheme(Theme.DARK);
-    } else {
-      setTheme(Theme.LIGHT);
-    }
-  }
 
   return (
     <>
@@ -21,8 +19,8 @@ const CliReference: React.FC<{}> = () => {
         className="cli-reference"
         data-theme={theme === Theme.DARK ? "dark" : "light"}
       >
-        <div className="spacing">
-          <Switch value={theme === Theme.DARK} onChange={switchTheme} />
+        <div className="nav">
+          <SideNav theme={theme} changeTheme={setTheme} doc={doc} />
         </div>
       </div>
     </>
@@ -40,9 +38,4 @@ function osThemePreference(): Theme {
   } else {
     return Theme.LIGHT;
   }
-}
-
-enum Theme {
-  LIGHT,
-  DARK,
 }

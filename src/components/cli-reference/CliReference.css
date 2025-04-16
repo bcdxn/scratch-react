@@ -18,4 +18,11 @@
   .spacing {
     padding: 40px;
   }
+
+  .nav {
+    height: 100%;
+  }
+  
+  color: var(--font-color);
+  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

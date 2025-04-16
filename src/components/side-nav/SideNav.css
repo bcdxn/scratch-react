@@ -1,0 +1,23 @@
+.side-nav {
+  height: 100vh;
+  width: 220px;
+
+  .header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    line-height: 1;
+    min-height: 50px;
+    padding: 0 16px;
+
+    h1 {
+      color: var(--font-color);
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .switch {
+      margin: 0 16px;
+    }
+  }
+}
