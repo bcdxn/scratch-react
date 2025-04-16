@@ -1,10 +1,12 @@
 .side-nav {
   height: 100vh;
   width: 220px;
+  border-right: 1px solid var(--primary-color);
 
   .header {
     align-items: center;
     display: flex;
+    border-bottom: 1px solid var(--primary-color);
     justify-content: space-between;
     line-height: 1;
     min-height: 50px;
@@ -17,7 +19,19 @@
     }
 
     .switch {
-      margin: 0 16px;
+      margin: 0 0 0 16px;
     }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .side-nav {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 0) and (max-width: 1023px) {
+  .side-nav {
+    display: none;
   }
 }
