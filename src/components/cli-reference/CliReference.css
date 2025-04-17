@@ -1,12 +1,16 @@
 .cli-reference[data-theme="dark"] {
   --primary-color: #4C566A;
+  --secondary-color: #434C5E;
   --font-color: #ECEFF4;
+  --active-font-color: #ffffff;
   --bg-color: #2E3440;
 }
 
 .cli-reference[data-theme="light"] {
   --primary-color: #D8DEE9;
+  --secondary-color: #E5E9F0;
   --font-color: #2E3440;
+  --active-font-color: #111111;
   --bg-color: #fff;
 }
 
