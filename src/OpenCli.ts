@@ -1,123 +1,123 @@
 export interface OpenCliDocument {
-  OpenCLIVersion?: string;
-  Info: Info;
-  Install?: Install[];
-  Global?: Global;
-  CommandTrie?: CommandTrie;
+  openCLIVersion?: string;
+  info: Info;
+  install?: Install[];
+  global?: Global;
+  commandTrie?: CommandTrie;
 }
 
 export interface Info {
-  Title: string;
-  Summary?: string;
-  Description?: string;
-  License?: License;
-  Contact?: Contact;
-  Binary?: string;
-  Version?: string;
+  title: string;
+  summary?: string;
+  description?: string;
+  license?: License;
+  contact?: Contact;
+  binary?: string;
+  version?: string;
 }
 
 export interface License {
-  Name: string;
-  SpdxID?: string;
-  URL?: string;
+  name: string;
+  spdxID?: string;
+  url?: string;
 }
 
 export interface Contact {
-  Name: string;
-  Email?: string;
-  URL?: string;
+  name: string;
+  email?: string;
+  url?: string;
 }
 
 export interface Install {
-  Name: string;
-  Command: string;
-  URL: string;
-  Description: string;
+  name: string;
+  command?: string;
+  url?: string;
+  description?: string;
 }
 
 export interface Global {
-  ExitCodes: ExitCode[];
-  Flags: Flag[];
+  exitCodes: ExitCode[];
+  flags: Flag[];
 }
 
 export interface ExitCode {
-  Code: number;
-  Status: string;
-  Summary: string;
-  Description: string;
+  code: number;
+  status: string;
+  summary: string;
+  description?: string;
 }
 
 export interface Command {
-  Line: string;
-  Name: string;
-  LeafName: string;
-  Params: string;
-  Aliases: string[];
-  Summary: string;
-  Description: string;
-  Arguments: Argument[];
-  Flags: Flag[];
-  Hidden: boolean;
-  Group: boolean;
-  CmdSpecificExitCodes: ExitCode[];
-  ExitCodes: ExitCode[];
+  line?: string;
+  name?: string;
+  leafName?: string;
+  params?: string;
+  aliases?: string[];
+  summary?: string;
+  description?: string;
+  arguments?: Argument[];
+  flags?: Flag[];
+  hidden?: boolean;
+  group?: boolean;
+  cmdSpecificExitCodes?: ExitCode[];
+  exitCodes?: ExitCode[];
 }
 
 export interface Argument {
-  Name: string;
-  Summary: string;
-  Description: string;
-  Type: string;
-  Variadic: boolean;
-  Choices: Choice[];
-  Required: boolean;
-  Default: DefaultValue;
+  name: string;
+  summary: string;
+  description: string;
+  type: string;
+  variadic: boolean;
+  choices: Choice[];
+  required: boolean;
+  default: DefaultValue;
 }
 
 export interface Flag {
-  Name: string;
-  Aliases: string[];
-  Hint: string;
-  Summary: string;
-  Description: string;
-  Type: string;
-  Variadic: boolean;
-  Choices: Choice[];
-  Hidden: boolean;
-  Required: boolean;
-  Default: DefaultValue;
-  AltSources: AlternativeSource[];
+  name: string;
+  aliases: string[];
+  hint: string;
+  summary: string;
+  description: string;
+  type: string;
+  variadic: boolean;
+  choices: Choice[];
+  hidden: boolean;
+  required: boolean;
+  default: DefaultValue;
+  altSources: AlternativeSource[];
 }
 
 export interface Choice {
-  Value: string;
-  Description: string;
+  value: string;
+  description: string;
 }
 
 export interface DefaultValue {
-  IsSet: boolean;
-  Bool: boolean;
-  String: string;
+  isSet: boolean;
+  bool: boolean;
+  string: string;
 }
 
 export interface AlternativeSource {
-  Type: string;
-  EnvironmentVariable: string;
-  File: FileSource;
+  type: string;
+  environmentVariable: string;
+  file: FileSource;
 }
 
 export interface FileSource {
-  Format: string;
-  Path: string;
-  Property: string;
+  format: string;
+  path: string;
+  property: string;
 }
 
 export interface CommandTrie {
-  Root?: CommandTrieNode;
+  root?: CommandTrieNode;
 }
 
 export interface CommandTrieNode {
-  Name: string;
-  Command: Command;
-  Commands: (CommandTrieNode | undefined)[];
+  name: string;
+  command: Command;
+  commands: (CommandTrieNode | undefined)[];
 }
