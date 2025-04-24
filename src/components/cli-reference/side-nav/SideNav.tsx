@@ -1,8 +1,8 @@
 import React from "react";
 import "./SideNav.css";
-import Switch from "../switch/Switch";
-import { Theme } from "../../Theme";
-import { OpenCliDocument } from "../../OpenCli";
+import Switch from "../../switch/Switch";
+import { Theme } from "../../../Theme";
+import { OpenCliDocument } from "../../../OpenCli";
 import CommandList from "./command-list/CommandList";
 
 interface CliReferenceProps {

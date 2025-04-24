@@ -16,6 +16,7 @@
 
 .cli-reference {
   background-color: var(--bg-color);
+  display: flex;
   min-height: 100vh;
   min-width: 100%;
 
@@ -29,4 +30,11 @@
   
   color: var(--font-color);
   font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  .content {
+    flex: 1;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
 }

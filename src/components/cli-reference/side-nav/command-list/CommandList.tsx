@@ -1,5 +1,5 @@
 import React from "react";
-import { CommandTrieNode } from "../../../OpenCli";
+import { CommandTrieNode } from "../../../../OpenCli";
 
 interface CommandListProps {
   commandNode?: CommandTrieNode;

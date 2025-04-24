@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./CliReference.css";
-import SideNav from "../side-nav/SideNav";
+import SideNav from "./side-nav/SideNav";
 import { Theme } from "../../Theme";
 import { OpenCliDocument } from "../../OpenCli";
+import IntroSection from "./command-section/IntroSection";
 
 const doc: OpenCliDocument = {
   info: {
@@ -111,6 +112,10 @@ const CliReference: React.FC<{}> = () => {
       >
         <div className="nav">
           <SideNav theme={theme} changeTheme={setTheme} doc={doc} />
+        </div>
+
+        <div className="content">
+          <IntroSection doc={doc} />
         </div>
       </div>
     </>
