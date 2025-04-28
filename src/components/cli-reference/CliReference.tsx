@@ -11,6 +11,14 @@ const doc: OpenCliDocument = {
     summary: "A CLI for working with OpenCLI Specs",
     description:
       "`ocli` is a command line interface designed to make working with [OpenCLI\nSpec documents](https://github.com/bcdxn/opencli/tree/main) easier. It provides a number of capabilities, including:\n\n- validating OpenCLI Spec documents\n- generating Documentation from OpenCLI Spec documents\n- generating boilerplate for various CLI frameworks from OpenCLI Spec\n  documents\n\nThe commands are documented below. You can also find out more about each\ncommand using the contextual `--help` flag. e.g.:\n\n```sh\nocli generate --help\n```",
+    contact: {
+      name: "The OpenCLI Team",
+      url: "https://opencli.io",
+    },
+    license: {
+      name: "MIT",
+      url: "https://spdx.org/licenses/MIT.html",
+    },
   },
   install: [
     {

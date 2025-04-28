@@ -42,7 +42,7 @@ table {
 	border-spacing: 0;
 }
 
-body, button, html, input {
+* {
   -webkit-font-smoothing: antialiased;
 }
 

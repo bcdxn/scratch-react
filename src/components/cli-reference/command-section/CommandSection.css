@@ -1,14 +1,92 @@
 .command-section {
+  border-bottom: 1px solid var(--primary-color);
   box-sizing: border-box;
   display: flex;
   width: 100%;
+  padding: 50px;
+
+  a {
+    color: var(--accent-primary-color);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--font-color)
+  }
 
   h1 {
     font-size: 24px;
     font-weight: bold;
     height: 40px;
     line-height: 40px;
-    padding: 53px 75px 0 75px;
+    padding: 8px 0 0 0;
     width: 100%;
+  }
+
+  .command-resource {
+    box-sizing: border-box;
+    font-size: 16px;
+    padding-right: 25px;
+    width: 50%;
+
+    ul {
+      padding: 0 16px;
+      li {
+        list-style: disc;
+        margin: 0 16px;
+      }
+    }
+    
+    p {
+      padding: 12px 0;
+      /* letter-spacing: .05rem; */
+      line-height: 26px;
+    }
+
+    pre {
+      background-color: var(--bg-secondary-color);
+      border-radius: 4px;
+      margin: 12px 0;
+      padding: 12px;
+
+      code {
+        padding: 0;
+      }
+    }
+
+    code {
+      background-color: var(--bg-secondary-color);
+      border-radius: 4px;
+      font-family: Monaco, monospace;
+      padding: 2px 4px;
+    }
+  }
+
+  .command-example {
+    box-sizing: border-box;
+    padding-left: 25px;
+    width: 50%;
+
+    .info-spacer {
+      height: 54px;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: bold;
+      padding: 24px 0 12px 0;
+    }
+
+    p {
+      padding: 6px 0;
+      /* letter-spacing: .05rem; */
+      line-height: 26px;
+    }
+
+    a {
+      display: inline-block;
+      padding: 6px 0;
+    }
   }
 }
