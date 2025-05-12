@@ -3,7 +3,7 @@
   box-sizing: border-box;
   display: flex;
   width: 100%;
-  padding: 50px;
+  
 
   a {
     color: var(--accent-primary-color);
@@ -27,7 +27,6 @@
     box-sizing: border-box;
     font-size: 16px;
     padding-right: 25px;
-    width: 50%;
 
     ul {
       padding: 0 16px;
@@ -64,13 +63,6 @@
 
   .command-example {
     box-sizing: border-box;
-    padding-left: 25px;
-    width: 50%;
-
-    .info-spacer {
-      height: 54px;
-      width: 100%;
-    }
 
     h2 {
       font-size: 18px;
@@ -87,6 +79,45 @@
     a {
       display: inline-block;
       padding: 6px 0;
+    }
+  }
+}
+
+@media screen and (min-width: 920px) {
+  .command-section {
+    flex-direction: row;
+
+    .command-resource {
+      padding: 50px;
+      width: 50%;
+    }
+    .command-example {
+      padding-left: 25px;
+      width: 50%;
+
+      .info-spacer {
+        height: 54px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 0) and (max-width: 919px) {
+  .command-section {
+    flex-direction: column;
+
+    .command-resource {
+      padding: 10px 10px 0 10px;
+      width: 100%;
+    }
+    .command-example {
+      padding: 0 10px 10px 10px;
+      width: 100%;
+
+      .info-spacer {
+        display: none;
+      }
     }
   }
 }
