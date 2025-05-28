@@ -4,6 +4,7 @@ import SideNav from "./side-nav/SideNav";
 import { Theme } from "../../Theme";
 import { OpenCliDocument } from "../../OpenCli";
 import IntroSection from "./command-section/IntroSection";
+import CommandList from "./command-list/CommandList";
 
 const doc: OpenCliDocument = {
   info: {
@@ -39,6 +40,7 @@ const doc: OpenCliDocument = {
         name: "ocli",
         leafName: "ocli",
         params: "<arguments> [flags]",
+        group: true,
       },
       name: "ocli",
       commands: [
@@ -48,6 +50,7 @@ const doc: OpenCliDocument = {
             name: "ocli generate",
             leafName: "generate",
             params: "<arguments> [flags]",
+            group: true,
           },
           name: "ocli generate",
           commands: [
@@ -57,6 +60,10 @@ const doc: OpenCliDocument = {
                 name: "ocli generate code",
                 leafName: "code",
                 params: "<arguments> [flags]",
+                summary:
+                  "Generate CLI Boilerplate code from an OpenCLI Spec document",
+                description:
+                  "The `generate cli` command will generate the boilerplate code for various CLI frameworks from an OpenCLI Spec document. You can specify the language of the CLI to be generated using the `--language` flag.",
               },
               name: "ocli generate code",
               commands: [],
@@ -67,6 +74,9 @@ const doc: OpenCliDocument = {
                 name: "ocli generate docs",
                 leafName: "docs",
                 params: "<arguments> [flags]",
+                summary: "Generate documentation from an OpenCLI Spec document",
+                description:
+                  "The `generate docs` command will generate documentation from an OpenCLI Spec document. You can specify the format of the documentation to be generated using the `--format` flag.",
               },
               name: "ocli generate docs",
               commands: [],
@@ -79,6 +89,7 @@ const doc: OpenCliDocument = {
             name: "ocli specification",
             leafName: "specification",
             params: "<arguments> [flags]",
+            group: true,
           },
           name: "ocli specification",
           commands: [
@@ -88,6 +99,9 @@ const doc: OpenCliDocument = {
                 name: "ocli specification check",
                 leafName: "check",
                 params: "<arguments> [flags]",
+                summary: "Check an OpenCLI Spec document for errors",
+                description:
+                  "The `check` command will validate an OpenCLI Spec document and return any errors that are found.",
               },
               name: "ocli specification check",
               commands: [],
@@ -98,6 +112,10 @@ const doc: OpenCliDocument = {
                 name: "ocli specification versions",
                 leafName: "versions",
                 params: "<arguments> [flags]",
+                summary:
+                  "Print the versions of the OpenCLI Specifications that are supported",
+                description:
+                  "The `versions` command will print the versions of the OpenCLI Specification that are available and supported by this version of the OpenCLI CLI.",
               },
               name: "ocli specification versions",
               commands: [],
@@ -124,6 +142,7 @@ const CliReference: React.FC<{}> = () => {
 
         <div className="content">
           <IntroSection doc={doc} />
+          <CommandList doc={doc} />
         </div>
       </div>
     </>

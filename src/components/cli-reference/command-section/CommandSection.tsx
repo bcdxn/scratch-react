@@ -1,13 +1,31 @@
 import React from "react";
 import "./CommandSection.css";
-import CommandMain from "./command-main/CommandMain";
+import { Command } from "../../../OpenCli";
+import Markdown from "react-markdown";
 
-interface CommandSectionProps {}
+interface CommandSectionProps {
+  command: Command;
+}
 
-const CommandSection: React.FC<CommandSectionProps> = (props) => {
+const CommandSection: React.FC<CommandSectionProps> = ({ command }) => {
   return (
     <section className="command-section">
-      <CommandMain />
+      <h1 className="command-line">{command.line}</h1>
+      <div className="command-content">
+        <div className="command-resource">
+          {command.summary && (
+            <p>
+              <Markdown>{command.summary}</Markdown>
+            </p>
+          )}
+          {command.description && (
+            <p>
+              <Markdown>{command.description}</Markdown>
+            </p>
+          )}
+        </div>
+        <div className="command-example"></div>
+      </div>
     </section>
   );
 };

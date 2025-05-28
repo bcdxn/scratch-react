@@ -10,30 +10,35 @@ interface IntroSectionProps {
 const IntroSection: React.FC<IntroSectionProps> = (props) => {
   return (
     <section className="command-section">
-      <div className="command-resource">
-        <h1>{props.doc.info.title}</h1>
-        {props.doc.info.summary && (
-          <p>
-            <Markdown>{props.doc.info.summary}</Markdown>
-          </p>
-        )}
-        {props.doc.info.description && (
-          <p>
-            <Markdown>{props.doc.info.description}</Markdown>
-          </p>
-        )}
-      </div>
-      <div className="command-example">
-        <div className="info-spacer"></div>
-        {props.doc.info.contact?.name && <h2>Contacts</h2>}
-        {props.doc.info.contact?.name && <p>{props.doc.info.contact.name}</p>}
-        {props.doc.info.contact?.url && (
-          <a href={props.doc.info.contact.url}>{props.doc.info.contact.url}</a>
-        )}
-        {props.doc.info.license?.name && <h2>License</h2>}
-        {props.doc.info.license?.name && props.doc.info.license?.url && (
-          <a href={props.doc.info.license.url}>{props.doc.info.license.name}</a>
-        )}
+      <h1>{props.doc.info.title}</h1>
+      <div className="command-content">
+        <div className="command-resource">
+          {props.doc.info.summary && (
+            <p>
+              <Markdown>{props.doc.info.summary}</Markdown>
+            </p>
+          )}
+          {props.doc.info.description && (
+            <p>
+              <Markdown>{props.doc.info.description}</Markdown>
+            </p>
+          )}
+        </div>
+        <div className="command-example">
+          {props.doc.info.contact?.name && <h2>Contacts</h2>}
+          {props.doc.info.contact?.name && <p>{props.doc.info.contact.name}</p>}
+          {props.doc.info.contact?.url && (
+            <a href={props.doc.info.contact.url}>
+              {props.doc.info.contact.url}
+            </a>
+          )}
+          {props.doc.info.license?.name && <h2>License</h2>}
+          {props.doc.info.license?.name && props.doc.info.license?.url && (
+            <a href={props.doc.info.license.url}>
+              {props.doc.info.license.name}
+            </a>
+          )}
+        </div>
       </div>
     </section>
   );
