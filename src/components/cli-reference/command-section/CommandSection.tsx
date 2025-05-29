@@ -5,24 +5,25 @@ import Markdown from "react-markdown";
 
 interface CommandSectionProps {
   command: Command;
+  first: boolean;
 }
 
-const CommandSection: React.FC<CommandSectionProps> = ({ command }) => {
+const CommandSection: React.FC<CommandSectionProps> = ({ command, first }) => {
   return (
-    <section className="command-section">
-      <h1 className="command-line">{command.line}</h1>
+    <section
+      className="command-section"
+      id={first ? "FirstCommand" : command.line}
+    >
+      <a
+        href={"#" + command.name?.replace(/\s+/g, "-")}
+        id={command.name?.replace(/\s+/g, "-")}
+      >
+        <h1 className="command-line">{command.line}</h1>
+      </a>
       <div className="command-content">
         <div className="command-resource">
-          {command.summary && (
-            <p>
-              <Markdown>{command.summary}</Markdown>
-            </p>
-          )}
-          {command.description && (
-            <p>
-              <Markdown>{command.description}</Markdown>
-            </p>
-          )}
+          {command.summary && <Markdown>{command.summary}</Markdown>}
+          {command.description && <Markdown>{command.description}</Markdown>}
         </div>
         <div className="command-example"></div>
       </div>

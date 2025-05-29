@@ -36,13 +36,23 @@ const CliReference: React.FC<CliReferenceProps> = (props) => {
         <h2>Install</h2>
         <ul className="installation-methods">
           {props.doc.install?.map((installMethod) => (
-            <li>{installMethod.name}</li>
+            <li key={installMethod.name}>{installMethod.name}</li>
           ))}
         </ul>
 
         <div className="nav-break"></div>
 
-        <h2>Commands</h2>
+        <h2
+          onClick={(e) => {
+            e.preventDefault();
+            const elem = document.getElementById("FirstCommand");
+            elem?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+        >
+          Commands
+        </h2>
         <CommandList commandNode={props.doc.commandTrie?.root} />
       </div>
     </>

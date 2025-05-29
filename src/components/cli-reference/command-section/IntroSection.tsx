@@ -14,14 +14,10 @@ const IntroSection: React.FC<IntroSectionProps> = (props) => {
       <div className="command-content">
         <div className="command-resource">
           {props.doc.info.summary && (
-            <p>
-              <Markdown>{props.doc.info.summary}</Markdown>
-            </p>
+            <Markdown>{props.doc.info.summary}</Markdown>
           )}
           {props.doc.info.description && (
-            <p>
-              <Markdown>{props.doc.info.description}</Markdown>
-            </p>
+            <Markdown>{props.doc.info.description}</Markdown>
           )}
         </div>
         <div className="command-example">
